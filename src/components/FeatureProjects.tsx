@@ -15,7 +15,7 @@ const works = [
       "The app is designed to help you manage your task and manage task status locally",
     platform: "Mobile",
     techStack: "Android (XML-based)",
-    appLink: "/app-downloads/todoish/personalfinance.apk",
+    appLink: "/app-downloads/todoish/todoish.apk",
     githubProject: "https://github.com/kennethliad1017/Todoish",
   },
   {
@@ -96,6 +96,8 @@ function FeaturedProject() {
                 <div className="flex gap-4 py-4">
                   <Link
                     href={works[selectedIndex].appLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="border border-gray-900 dark:border-gray-50 px-3 py-2 md:px-[2.625rem] md:py-4 rounded-md md:text-h6 md:h-14 font-medium"
                   >
                     Demo
