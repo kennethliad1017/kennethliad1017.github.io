@@ -71,7 +71,7 @@ export default function AboutMe() {
   return (
     <motion.div
       ref={ref}
-      className="h-screen flex items-center relative md:pl-16"
+      className="h-screen w-full flex items-center relative md:pl-16"
     >
       <motion.h2
         className="absolute text-h2 md:text-[7.5rem] md:font-normal font-semibold dark:text-gray-50/30 text-gray-950/20"
@@ -80,12 +80,12 @@ export default function AboutMe() {
         About me
       </motion.h2>
 
-      <div className="md:grid md:grid-cols-2 md:ml-4 md:items-center">
-        <div className="flex items-center justify-center w-full h-[70vh]">
+      <div className="md:grid w-full md:grid-cols-2 md:ml-4 md:items-center relative">
+        <div className="w-full h-[70vh] absolute top-0 right-0 bottom-0 left-0 md:relative">
           {/* <div className={`tagcloud ${isMobile && "w-[100% important]"}`}></div> */}
           <TagCloud />
         </div>
-        <div className="md:px-4 py-2 absolute top-0 right-0 bottom-0 left-0 md:relative">
+        <div className="md:px-4 px-2 py-2 w-full ">
           <p>
             I&lsquo;m a passionate frontend and mobile developer. Armed with a
             Bachelor of Science in Information Technology and hands-on

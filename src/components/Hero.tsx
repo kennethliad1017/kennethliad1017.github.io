@@ -5,8 +5,14 @@ import { Suspense, useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 
 import Reveal from "./Reveal";
-// import { Environment, Stage } from "@react-three/drei";
+import { Environment, Stage } from "@react-three/drei";
 import { useTheme } from "next-themes";
+
+import ComputerSetup from "@/components/ComputerSetup";
+import GamingChairTop from "@/components/GamingChairTop";
+import MacScreen from "@/components/MacScreen";
+import PcScreen from "@/components/PcScreen";
+import SteamdeckScreen from "@/components/Steamdeck_screen";
 
 export default function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -32,10 +38,10 @@ export default function HeroSection() {
   };
 
   return (
-    <div className="md:grid md:grid-cols-2">
+    <div className="md:grid md:grid-cols-2 flex flex-col px-4 w-full h-screen relative">
       <motion.div
         ref={containerRef}
-        className="h-screen w-full flex px-4 justify-center md:pl-32 items-center"
+        className="md:h-screen w-full flex justify-center md:pl-32 items-center z-20"
         style={{ opacity: inView ? 1 : 0 }}
       >
         <div>
@@ -142,19 +148,25 @@ export default function HeroSection() {
         </div>
       </motion.div>
 
-      {/*<Canvas*/}
-      {/*  dpr={[1, 1.5]}*/}
-      {/*  camera={{*/}
-      {/*    position: [1, 0.66, 1.25],*/}
-      {/*    fov: 50,*/}
-      {/*  }}*/}
-      {/*>*/}
-      {/*  <Suspense fallback={null}>*/}
-      {/*    <Stage>*/}
-      {/*      <Environment preset="apartment" */}
-      {/*    </Stage>*/}
-      {/*  </Suspense>*/}
-      {/*</Canvas>*/}
+      <Canvas
+        dpr={[1, 2]}
+        camera={{
+          position: [1, 0.66, 1.25],
+          fov: 50,
+        }}
+      >
+        <Suspense fallback={null}>
+          <Stage>
+            <ambientLight />
+            <Environment preset="apartment" />
+            <ComputerSetup />
+            <GamingChairTop />
+            <PcScreen />
+            <MacScreen />
+            <SteamdeckScreen />
+          </Stage>
+        </Suspense>
+      </Canvas>
     </div>
   );
 }

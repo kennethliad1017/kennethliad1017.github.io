@@ -39,7 +39,7 @@ function FeaturedProject() {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full flex flex-row relative">
       {inView && selectedIndex != -1 && (
         <div className="fixed top-0 left-0 right-0 w-full md:left-14 bottom-0 md:w-[48vw] md:px-12 md:py-11 font-sans md:bg-transparent z-[9999]">
           <div className="h-36">

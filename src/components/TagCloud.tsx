@@ -3,6 +3,7 @@
  */
 
 "use client";
+import useIsMobile from "@/hooks/useIsMobile";
 import React from "react";
 
 const techStack = [
@@ -82,6 +83,7 @@ const size = 1.5 * radius;
 const depth = 2 * radius;
 
 const TagCloud: React.FC = React.memo(() => {
+  const isMobile = useIsMobile();
   const tagCloudRef = React.useRef<HTMLDivElement | null>(null);
   const [items, setItems] = React.useState<ItemProps[]>(
     createInitialState(size)
@@ -93,8 +95,8 @@ const TagCloud: React.FC = React.memo(() => {
   const mouseY = React.useRef<number>(mouseY0.current);
 
   const next = React.useCallback(() => {
-    const a = -(Math.min(Math.max(-mouseY.current, -size), size) / radius) * maxSpeed // prettier-ignore
-    const b = (Math.min(Math.max(-mouseX.current, -size), size) / radius) * maxSpeed // prettier-ignore
+    const a = -(Math.min(Math.max(-mouseY.current, -size), size) / (isMobile ? radius / 2 : radius)) * maxSpeed // prettier-ignore
+    const b = (Math.min(Math.max(-mouseX.current, -size), size) / (isMobile ? radius / 2 : radius)) * maxSpeed // prettier-ignore
 
     if (Math.abs(a) <= 0.01 && Math.abs(b) <= 0.01) return; // pause
 
@@ -155,7 +157,7 @@ const TagCloud: React.FC = React.memo(() => {
   return (
     <div
       ref={tagCloudRef}
-      className="cursor-pointer mt-[6.25rem]"
+      className="cursor-pointer md:mt-[6.25rem] mt-[3.125rem]"
       onMouseMove={(ev) => {
         if (tagCloudRef?.current) {
           const rect = tagCloudRef.current.getBoundingClientRect();
@@ -165,8 +167,8 @@ const TagCloud: React.FC = React.memo(() => {
       }}
       style={{
         position: "relative",
-        width: `${2 * radius}px`,
-        height: `${2 * radius}px`,
+        width: `${2 * (isMobile ? radius / 3 : radius)}px`,
+        height: `${2 * (isMobile ? radius / 3 : radius)}px`,
       }}
     >
       {items.map((item) => {
