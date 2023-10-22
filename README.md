@@ -59,7 +59,7 @@ List of technologies, frameworks, and libraries used in this project. Provided l
 - [Framer Motion][framer-motion]
 - [TailwindCSS][tailwindcss]
 - [NextJS][nextjs]
-- [React Three Fiber(Not Implemented)][r3f]
+- [React Three Fiber][r3f]
 
 [nodejs]: https://nodejs.org/en/download/current
 [framer-motion]: https://www.framer.com/motion/
