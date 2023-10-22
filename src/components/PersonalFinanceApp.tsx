@@ -19,7 +19,7 @@ function PersonalFinanceApp({
   const isMobile = useIsMobile();
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, {
-    amount: 0.33,
+    amount: isMobile ? 0.25 : 0.33,
     once: false,
   });
 
@@ -38,7 +38,7 @@ function PersonalFinanceApp({
   return (
     <motion.div ref={ref} className="relative w-full h-screen mt-[40dvh]">
       <Parallax
-        offset={0.4}
+        offset={isMobile ? 0.25 : 0.4}
         className={`absolute transition-transform duration-200 ease-out ${
           isMobile ? "-bottom-[110vh]" : "top-[75dvh]"
         }`}
@@ -46,10 +46,13 @@ function PersonalFinanceApp({
         alt={`${projectTitle} app screen`}
         width={438}
         height={798}
-        style={{ left: "5dvw", scale: isMobile ? 0.5 : 0.7 }}
+        style={{
+          left: isMobile ? "-12vw" : "5vw",
+          scale: isMobile ? 0.5 : 0.7,
+        }}
       />
       <Parallax
-        offset={0.03125}
+        offset={isMobile ? 0.0078125 : 0.03125}
         className={`absolute transition-transform duration-200 ease-out ${
           isMobile ? "-bottom-[105vh]" : "top-[55dvh]"
         }`}
@@ -57,10 +60,13 @@ function PersonalFinanceApp({
         alt={`${projectTitle} app screen`}
         width={438}
         height={798}
-        style={{ right: "5dvw", scale: isMobile ? 0.45 : 0.6 }}
+        style={{
+          right: isMobile ? "-12vw" : "5vw",
+          scale: isMobile ? 0.45 : 0.6,
+        }}
       />
       <Parallax
-        offset={1.62}
+        offset={isMobile ? 0.81 : 1.62}
         className={`absolute transition-transform duration-200 ease-out ${
           isMobile ? "-bottom-[110vh]" : "top-[90dvh]"
         }`}
@@ -69,12 +75,12 @@ function PersonalFinanceApp({
         width={438}
         height={798}
         style={{
-          left: isMobile ? "-8dvw" : "0dvw",
+          left: isMobile ? "-12vw" : "0vw",
           scale: isMobile ? 0.7 : 1,
         }}
       />
       <Parallax
-        offset={0.77}
+        offset={isMobile ? 0.6 : 0.77}
         className={`absolute transition-transform duration-200 ease-out top-[45dvh] ${
           isMobile ? "-bottom-[125vh]" : ""
         }`}
@@ -83,7 +89,7 @@ function PersonalFinanceApp({
         width={438}
         height={798}
         style={{
-          right: "2dvw",
+          right: isMobile ? "-12vw" : "2vw",
           scale: isMobile ? 0.62 : 0.9,
         }}
       />

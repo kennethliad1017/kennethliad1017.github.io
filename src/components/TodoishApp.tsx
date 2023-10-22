@@ -20,7 +20,7 @@ function TodoishApp({
   const isMobile = useIsMobile();
   const ref = useRef(null);
   const inView = useInView(ref, {
-    amount: 0.33,
+    amount: isMobile ? 0.25 : 0.33,
     once: false,
   });
 

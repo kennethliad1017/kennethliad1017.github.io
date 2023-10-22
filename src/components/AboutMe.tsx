@@ -69,33 +69,71 @@ export default function AboutMe() {
   // }, []);
 
   return (
-    <motion.div
-      ref={ref}
-      className="h-screen w-full flex items-center relative md:pl-16"
-    >
-      <motion.h2
-        className="absolute text-h2 md:text-[7.5rem] md:font-normal font-semibold dark:text-gray-50/30 text-gray-950/20"
-        style={{ x: x }}
-      >
-        About me
-      </motion.h2>
+    <motion.div ref={ref} className="h-screen">
+      <div className="relative">
+        <motion.h2
+          className="absolute text-h2 md:text-[7.5rem] md:font-normal font-semibold dark:text-gray-50/30 text-gray-950/20"
+          style={{ x: x }}
+        >
+          About me
+        </motion.h2>
 
-      <div className="md:grid w-full md:grid-cols-2 md:ml-4 md:items-center relative">
-        <div className="w-full h-[70vh] absolute top-0 right-0 bottom-0 left-0 md:relative">
-          {/* <div className={`tagcloud ${isMobile && "w-[100% important]"}`}></div> */}
-          <TagCloud />
-        </div>
-        <div className="md:px-4 px-2 py-2 w-full ">
-          <p>
-            I&lsquo;m a passionate frontend and mobile developer. Armed with a
-            Bachelor of Science in Information Technology and hands-on
-            experience from internships, I&lsquo;m dedicated to crafting
-            captivating web and mobile experiences. With proficiency in
-            technologies like HTML & CSS, NextJS (React), Jetpack Compose and
-            Android (XML-based), I enjoy turning ideas into interactive reality.
-            Let&apos;s collaborate and create exceptional digital solutions
-            together.
-          </p>
+        <div className="md:grid w-full md:grid-cols-2 md:ml-4 md:items-center relative">
+          <div className="md:px-4 px-2 py-2">
+            <p>
+              I&lsquo;m a passionate frontend and mobile developer. Armed with a
+              Bachelor of Science in Information Technology and hands-on
+              experience from internships, I&lsquo;m dedicated to crafting
+              captivating web and mobile experiences. With proficiency in
+              technologies like HTML & CSS, NextJS (React), Jetpack Compose and
+              Android (XML-based), I enjoy turning ideas into interactive
+              reality. Let&apos;s collaborate and create exceptional digital
+              solutions together.
+            </p>
+          </div>
+
+          {isMobile ? (
+            <div className="flex gap-2 items-center flex-wrap px-2">
+              <h2>Techstack: </h2>
+              <span className="px-6 py-2 rounded-full bg-slate-900 text-white">
+                HTML
+              </span>
+              <span className="px-6 py-2 rounded-full bg-slate-900 text-white">
+                CSS
+              </span>
+              <span className="px-6 py-2 rounded-full bg-slate-900 text-white">
+                Javascript
+              </span>
+
+              <span className="px-6 py-2 rounded-full bg-slate-900 text-white">
+                Tailwind
+              </span>
+
+              <span className="px-6 py-2 rounded-full bg-slate-900 text-white">
+                React
+              </span>
+
+              <span className="px-6 py-2 rounded-full bg-slate-900 text-white">
+                Node
+              </span>
+
+              <span className="px-6 py-2 rounded-full bg-slate-900 text-white">
+                Android
+              </span>
+
+              <span className="px-6 py-2 rounded-full bg-slate-900 text-white">
+                Git
+              </span>
+
+              <span className="px-6 py-2 rounded-full bg-slate-900 text-white">
+                Github
+              </span>
+            </div>
+          ) : (
+            <div className="w-full absolute top-0 right-0 bottom-0 left-0 md:relative">
+              <TagCloud />
+            </div>
+          )}
         </div>
       </div>
     </motion.div>

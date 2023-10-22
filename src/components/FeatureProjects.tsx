@@ -39,23 +39,26 @@ function FeaturedProject() {
   };
 
   return (
-    <div className="w-full flex flex-row relative">
+    <div className="w-full h-screen md:flex md:flex-row">
       {inView && selectedIndex != -1 && (
-        <div className="fixed top-0 left-0 right-0 w-full md:left-14 bottom-0 md:w-[48vw] md:px-12 md:py-11 font-sans md:bg-transparent z-[9999]">
-          <div className="h-36">
-            <Reveal swipeClass="dark:bg-blue-400 bg-blue-600" isInView={inView}>
-              <h2 className="text-[2.5rem] leading-[3rem] font-medium">
-                {(selectedIndex + 1).toString().padStart(2, "0")}
-              </h2>
-            </Reveal>
-          </div>
-          <div
-            className="flex flex-col w-full items-center ml-12"
-            style={{
-              height: "calc(100% - 9rem)",
-            }}
-          >
-            <div className="w-full md:flex-grow">
+        <div className="fixed top-6 left-0 bottom-6 right-0 w-full md:left-14 md:w-[48vw] md:px-12 md:py-11 font-sans md:bg-transparent z-[9999]">
+          <div className="relative w-full h-full flex flex-col">
+            <div className="h-[4.5rem] md:h-36 w-full">
+              <Reveal
+                swipeClass="dark:bg-blue-400 bg-blue-600"
+                isInView={inView}
+              >
+                <h2 className="text-[2.5rem] leading-[3rem] font-medium">
+                  {(selectedIndex + 1).toString().padStart(2, "0")}
+                </h2>
+              </Reveal>
+            </div>
+            <div
+              className="w-full pl-12 pr-4"
+              style={{
+                height: "calc(100% - 9rem)",
+              }}
+            >
               <Reveal
                 isInView={inView}
                 swipeClass="dark:bg-blue-400 bg-blue-600"
@@ -88,12 +91,13 @@ function FeaturedProject() {
                 </p>
               </Reveal>
             </div>
-            <div className="w-full h-[5.5rem] mt-auto">
+
+            <div className="w-full h-[4.5rem] ml-12">
               <Reveal
                 isInView={inView}
                 swipeClass="dark:bg-blue-400 bg-blue-600"
               >
-                <div className="flex gap-4 py-4">
+                <div className="flex gap-4">
                   <Link
                     href={works[selectedIndex].appLink}
                     target="_blank"

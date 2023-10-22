@@ -49,13 +49,14 @@ const Reveal = ({
   },
 }: SwipeRevealProps) => {
   return (
-    <div className={`max-w-fit h-fit relative ${className} overflow-hidden`}>
+    <div className={`w-full relative ${className ? className : ""}`}>
       <motion.div
         variants={{
           hidden: { opacity: 0, y: 75 },
           visible: { opacity: 1, y: 0 },
         }}
         initial="hidden"
+        className="w-full"
         animate={isInView && "visible"}
         transition={revealTextTransition}
       >
@@ -63,7 +64,7 @@ const Reveal = ({
       </motion.div>
       <AnimatePresence>
         <motion.div
-          className={`absolute top-0 left-0 bottom-0 ${swipeClass}`}
+          className={`absolute top-0 left-0 right-0 bottom-0 ${swipeClass}`}
           style={{
             width: "100%",
           }}

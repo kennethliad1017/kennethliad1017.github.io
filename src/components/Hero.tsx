@@ -5,7 +5,7 @@ import { Suspense, useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 
 import Reveal from "./Reveal";
-import { Environment, Stage } from "@react-three/drei";
+import { Environment, Lightformer, Stage } from "@react-three/drei";
 import { useTheme } from "next-themes";
 
 import ComputerSetup from "@/components/ComputerSetup";
@@ -148,17 +148,26 @@ export default function HeroSection() {
         </div>
       </motion.div>
 
-      <Canvas
-        dpr={[1, 2]}
+      {/* <Canvas
+        dpr={2}
         camera={{
           position: [1, 0.66, 1.25],
           fov: 50,
         }}
+        shadows
       >
         <Suspense fallback={null}>
           <Stage>
             <ambientLight />
-            <Environment preset="apartment" />
+            <Environment>
+              <Lightformer
+                form="rect" // circle | ring | rect (optional, default = rect)
+                intensity={1} // power level (optional = 1)
+                color="white" // (optional = white)
+                scale={[10, 5]} // Scale it any way you prefer (optional = [1, 1])
+                target={[0, 0, 0]} // Target position (optional = undefined)
+              />
+            </Environment>
             <ComputerSetup />
             <GamingChairTop />
             <PcScreen />
@@ -166,7 +175,7 @@ export default function HeroSection() {
             <SteamdeckScreen />
           </Stage>
         </Suspense>
-      </Canvas>
+      </Canvas> */}
     </div>
   );
 }
