@@ -61,6 +61,19 @@ List of technologies, frameworks, and libraries used in this project. Provided l
 - [NextJS][nextjs]
 - [React Three Fiber][r3f]
 
+---
+
+© 2023 Kenneth Liad. All rights reserved.
+
+The 3D model of the SteamDeck utilized in this project is the property of Valve Corporation and is made available under the Creative Commons Attribution Non Commercial Share Alike 4.0 International license. For more details, please visit [Valve Corporation](https://store.steampowered.com/).
+© 2019 Valve Corporation
+
+Attribution for the following assets used in this project:
+
+- Laptop: Sourced from [BlenderKit](https://www.blenderkit.com/)
+- Headphone: Sourced from [BlenderKit](https://www.blenderkit.com/)
+- Gaming Chair: Sourced from [BlenderKit](https://www.blenderkit.com/)
+
 [nodejs]: https://nodejs.org/en/download/current
 [framer-motion]: https://www.framer.com/motion/
 [tailwindcss]: https://tailwindcss.com/docs/installation
