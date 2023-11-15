@@ -45,11 +45,15 @@ const Reveal = ({
   },
   revealTextTransition = {
     duration: 0.5,
-    delay: 0.75,
+    delay: 0.7,
   },
 }: SwipeRevealProps) => {
   return (
-    <div className={`w-full relative ${className ? className : ""}`}>
+    <div
+      className={`w-full relative overflow-hidden ${
+        className ? className : ""
+      }`}
+    >
       <motion.div
         variants={{
           hidden: { opacity: 0, y: 75 },

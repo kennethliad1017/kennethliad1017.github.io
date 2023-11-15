@@ -35,7 +35,9 @@ const Parallax = ({
   const [clientHeight, setClientHeight] = useState(0);
   const ref = useRef<HTMLImageElement>(null);
 
-  const { scrollY, scrollYProgress } = useScroll();
+  const { scrollY, scrollYProgress } = useScroll({
+    offset: ["start end", "end end"],
+  });
 
   const yRange = useTransform(
     scrollYProgress,

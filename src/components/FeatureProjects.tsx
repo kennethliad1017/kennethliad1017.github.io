@@ -7,6 +7,7 @@ import TodoishScreen from "./TodoishApp";
 import PersonalFinanceScreen from "./PersonalFinanceApp";
 
 import Reveal from "./Reveal";
+import { cn } from "@/lib/utils";
 
 const works = [
   {
@@ -41,7 +42,7 @@ function FeaturedProject() {
   return (
     <div className="w-full h-screen md:flex md:flex-row">
       {inView && selectedIndex != -1 && (
-        <div className="fixed top-6 left-0 bottom-6 right-0 w-full md:left-14 md:w-[48vw] md:px-12 md:py-11 font-sans md:bg-transparent z-[9999]">
+        <div className="fixed top-11 left-0 bottom-6 right-0 w-screen md:left-14 md:w-[48vw] md:px-12 md:py-11 font-sans md:bg-transparent z-[9999]">
           <div className="relative w-full h-full flex flex-col">
             <div className="h-[4.5rem] md:h-36 w-full">
               <Reveal
@@ -118,8 +119,13 @@ function FeaturedProject() {
           </div>
         </div>
       )}
-      <div className="w-full -z-10 md:z-0 md:w-1/2  ml-auto blur-xs md:blur-none">
-        <div className="w-full relative">
+      <div className="-z-10 md:z-0 md:w-1/2 ml-auto  blur-xs md:blur-none md:mb-0 mb-[30vh]">
+        <div className="relative">
+          <div
+            className={cn(
+              "absolute top-0 right-0 bottom-0 left-0 bg-black/20 md:hidden z-10"
+            )}
+          />
           <TodoishScreen
             projectTitle={works[0].projectTitle}
             index={0}
