@@ -21,7 +21,7 @@ function Socials() {
           href="https://www.github.com/kennethliad1017"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:no-underline text-gray-300 dark:hover:text-gray-50 hover:text-gray-700"
+          className="hover:no-underline text-gray-700 dark:text-gray-50"
         >
           <SocialIcons icon="github-logo" size="2.75rem" />
         </a>
@@ -29,7 +29,7 @@ function Socials() {
           href="https://www.linkedin.com/in/kenneth-liad-60b095228"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:no-underline text-gray-300  dark:hover:text-gray-50 hover:text-gray-700"
+          className="hover:no-underline text-gray-700 dark:text-gray-50"
         >
           <SocialIcons icon="linkedin-logo" size="2.75rem" />
         </a>
