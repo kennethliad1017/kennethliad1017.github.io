@@ -148,6 +148,7 @@ export default function HeroSection() {
         </div>
       </motion.div>
 
+      {/* Remove the loading of my 3d models */}
       {/* <Canvas
         dpr={2}
         camera={{
