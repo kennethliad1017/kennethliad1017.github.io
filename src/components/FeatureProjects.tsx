@@ -37,7 +37,7 @@ function FeaturedProject() {
   const ref = useRef(null);
 
   const isInView = useInView(ref, {
-    amount: 0.75,
+    amount: "some",
     once: false,
   });
 
@@ -47,22 +47,19 @@ function FeaturedProject() {
   };
 
   return (
-    <motion.div
-      ref={ref}
-      className="w-full h-screen md:flex md:flex-row relative z-0"
-      animate={isInView && "visible"}
-      variants={{
-        hidden: { opacity: 0, y: 75 },
-        visible: { opacity: 1, y: 0 },
-      }}
-      transition={{
-        duration: 0.5,
-      }}
-    >
-      <div
+    <div className="w-full h-screen md:flex md:flex-row relative z-0">
+      <motion.div
         className={cn(
-          "fixed top-0 right-0 bottom-0 left-0 h-screen bg-black/30 md:hidden z-10"
+          "fixed top-0 right-0 bottom-0 left-0 dark:bg-black/30  md:hidden z-10"
         )}
+        animate={isInView ? "visible" : "hidden"}
+        variants={{
+          hidden: { opacity: 0, y: 75 },
+          visible: { opacity: 1, y: 0 },
+        }}
+        transition={{
+          duration: 0.5,
+        }}
       />
       {inView && selectedIndex != -1 && (
         <div className="fixed top-11 left-0 bottom-6 right-0 w-screen md:left-14 md:w-[48vw] pl-4 md:px-12 md:py-11 font-sans md:bg-transparent z-[9999]">
@@ -142,7 +139,10 @@ function FeaturedProject() {
           </div>
         </div>
       )}
-      <div className="-z-10 md:z-0 md:w-1/2 ml-auto  blur-xs md:blur-none md:mb-0 mb-[30vh]">
+      <div
+        ref={ref}
+        className="-z-10 md:z-0 md:w-1/2 ml-auto  blur-xs md:blur-none md:mb-0 mb-[30vh]"
+      >
         <div className="relative">
           <TodoishScreen
             projectTitle={works[0].projectTitle}
@@ -156,7 +156,7 @@ function FeaturedProject() {
           />
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
