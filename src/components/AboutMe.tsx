@@ -94,37 +94,37 @@ export default function AboutMe() {
             </div>
             <div className="flex gap-2 items-center flex-wrap px-2">
               <h2>Techstack: </h2>
-              <span className="px-6 py-2 rounded-full bg-slate-900 text-white">
+              <span className="px-6 py-2 rounded-full bg-slate-700 text-white">
                 HTML
               </span>
-              <span className="px-6 py-2 rounded-full bg-slate-900 text-white">
+              <span className="px-6 py-2 rounded-full bg-slate-700 text-white">
                 CSS
               </span>
-              <span className="px-6 py-2 rounded-full bg-slate-900 text-white">
+              <span className="px-6 py-2 rounded-full bg-slate-700 text-white">
                 Javascript
               </span>
 
-              <span className="px-6 py-2 rounded-full bg-slate-900 text-white">
+              <span className="px-6 py-2 rounded-full bg-slate-700 text-white">
                 Tailwind
               </span>
 
-              <span className="px-6 py-2 rounded-full bg-slate-900 text-white">
+              <span className="px-6 py-2 rounded-full bg-slate-700 text-white">
                 React
               </span>
 
-              <span className="px-6 py-2 rounded-full bg-slate-900 text-white">
+              <span className="px-6 py-2 rounded-full bg-slate-700 text-white">
                 Node
               </span>
 
-              <span className="px-6 py-2 rounded-full bg-slate-900 text-white">
+              <span className="px-6 py-2 rounded-full bg-slate-700 text-white">
                 Android
               </span>
 
-              <span className="px-6 py-2 rounded-full bg-slate-900 text-white">
+              <span className="px-6 py-2 rounded-full bg-slate-700 text-white">
                 Git
               </span>
 
-              <span className="px-6 py-2 rounded-full bg-slate-900 text-white">
+              <span className="px-6 py-2 rounded-full bg-slate-700 text-white">
                 Github
               </span>
             </div>

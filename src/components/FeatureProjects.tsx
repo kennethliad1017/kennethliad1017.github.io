@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
 
 import TodoishScreen from "./TodoishApp";
@@ -8,6 +8,7 @@ import PersonalFinanceScreen from "./PersonalFinanceApp";
 
 import Reveal from "./Reveal";
 import { cn } from "@/lib/utils";
+import { motion, useInView } from "framer-motion";
 
 const works = [
   {
@@ -33,6 +34,12 @@ const works = [
 function FeaturedProject() {
   const [inView, setInView] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(-1);
+  const ref = useRef(null);
+
+  const isInView = useInView(ref, {
+    amount: 0.75,
+    once: false,
+  });
 
   const onViewChanged = (value: boolean, index: number) => {
     setInView(value);
@@ -40,9 +47,25 @@ function FeaturedProject() {
   };
 
   return (
-    <div className="w-full h-screen md:flex md:flex-row">
+    <motion.div
+      ref={ref}
+      className="w-full h-screen md:flex md:flex-row relative z-0"
+      animate={isInView && "visible"}
+      variants={{
+        hidden: { opacity: 0, y: 75 },
+        visible: { opacity: 1, y: 0 },
+      }}
+      transition={{
+        duration: 0.5,
+      }}
+    >
+      <div
+        className={cn(
+          "fixed top-0 right-0 bottom-0 left-0 h-screen bg-black/30 md:hidden z-10"
+        )}
+      />
       {inView && selectedIndex != -1 && (
-        <div className="fixed top-11 left-0 bottom-6 right-0 w-screen md:left-14 md:w-[48vw] md:px-12 md:py-11 font-sans md:bg-transparent z-[9999]">
+        <div className="fixed top-11 left-0 bottom-6 right-0 w-screen md:left-14 md:w-[48vw] pl-4 md:px-12 md:py-11 font-sans md:bg-transparent z-[9999]">
           <div className="relative w-full h-full flex flex-col">
             <div className="h-[4.5rem] md:h-36 w-full">
               <Reveal
@@ -121,11 +144,6 @@ function FeaturedProject() {
       )}
       <div className="-z-10 md:z-0 md:w-1/2 ml-auto  blur-xs md:blur-none md:mb-0 mb-[30vh]">
         <div className="relative">
-          <div
-            className={cn(
-              "absolute top-0 right-0 bottom-0 left-0 bg-black/20 md:hidden z-10"
-            )}
-          />
           <TodoishScreen
             projectTitle={works[0].projectTitle}
             index={0}
@@ -138,7 +156,7 @@ function FeaturedProject() {
           />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

@@ -41,7 +41,7 @@ function PersonalFinanceApp({
       <motion.div ref={ref} className="relative w-full h-screen mt-[40dvh]">
         <Parallax
           offset={0.25}
-          className={`absolute transition-transform duration-200 ease-out top-[127dvh]`}
+          className={`absolute transition-transform duration-200 ease-out top-[102dvh]`}
           src="/images/budget_PersonalFinance.svg"
           alt={`${projectTitle} app screen`}
           width={438}
@@ -54,21 +54,21 @@ function PersonalFinanceApp({
         <Parallax
           offset={0.0625}
           className={cn(
-            "absolute transition-transform duration-200 ease-out top-[109dvh]"
+            "absolute transition-transform duration-200 ease-out top-[102dvh]"
           )}
           src="/images/saving_PersonalFinance.svg"
           alt={`${projectTitle} app screen`}
           width={438}
           height={798}
           style={{
-            right: "-20vw",
+            right: "-24vw",
             scale: 0.45,
           }}
         />
         <Parallax
           offset={0.81}
           className={cn(
-            "absolute transition-transform duration-200 ease-out top-[142dvh]"
+            "absolute transition-transform duration-200 ease-out top-[82dvh]"
           )}
           src="/images/home_PersonalFinance.svg"
           alt={`${projectTitle} app screen`}
@@ -82,7 +82,7 @@ function PersonalFinanceApp({
         <Parallax
           offset={0.6}
           className={cn(
-            "absolute transition-transform duration-200 ease-out top-[139dvh]"
+            "absolute transition-transform duration-200 ease-out top-[95dvh]"
           )}
           src="/images/analytics_PersonalFinance.svg"
           alt={`${projectTitle} app screen`}

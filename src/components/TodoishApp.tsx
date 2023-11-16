@@ -21,7 +21,7 @@ function TodoishApp({
   const isMobile = useIsMobile();
   const ref = useRef(null);
   const inView = useInView(ref, {
-    amount: 0.33,
+    amount: 0.5,
     once: false,
   });
 
@@ -44,9 +44,9 @@ function TodoishApp({
         className="relative w-full h-screen mt-[30vh] md:mt-[40vh] px-0 md:px-4"
       >
         <Parallax
-          offset={0.4375}
+          offset={0.675}
           className={cn(
-            "absolute transition-transform duration-200 ease-out top-[136dvh]"
+            "absolute transition-transform duration-200 ease-out top-[106dvh]"
           )}
           src="/images/edit_Todoish.svg"
           alt={`${projectTitle} app screen`}
@@ -55,9 +55,9 @@ function TodoishApp({
           style={{ left: "4dvw", scale: 0.5 }}
         />
         <Parallax
-          offset={1.65}
+          offset={2.33}
           className={cn(
-            "absolute transition-transform duration-200 ease-out top-[218dvh]"
+            "absolute transition-transform duration-200 ease-out top-[140dvh]"
           )}
           src="/images/home_Todoish.svg"
           alt={`${projectTitle} app screen`}
@@ -69,9 +69,9 @@ function TodoishApp({
           }}
         />
         <Parallax
-          offset={1.25}
+          offset={1.8}
           className={cn(
-            "absolute transition-transform duration-200 ease-out top-[196dvh]"
+            "absolute transition-transform duration-200 ease-out top-[137dvh]"
           )}
           src="/images/create_Todoish.svg"
           alt={`${projectTitle} app screen`}
